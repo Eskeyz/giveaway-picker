@@ -82,7 +82,7 @@ class GiveawayPicker extends Component {
               </div>
             </section>
             <section>
-              <input type="text" placeholder="Type here" className="input input-bordered w-full text-center" onChange={(e) => this.setState({ newParticipant: e.target.value })} />
+              <input type="text" placeholder="Type here" className="input input-bordered w-full text-center" onChange={(e) => this.setState({ newParticipant: e.target.value })} required />
               <section className='pt-2'>
                 <button className="btn btn-wide" onClick={() => this.handleAddParticipant(this.state.newParticipant)}>Add</button>
               </section>
