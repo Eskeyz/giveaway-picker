@@ -1,12 +1,10 @@
 import React from 'react'
 import Content from './components/Content'
-import { Footer } from './components/Footer'
 
 const App = () => {
   return (
-    <div>
+    <div className='h-[100vh] flex justify-center items-center p-5'>
       <Content />
-      <Footer />
     </div>
   )
 }
