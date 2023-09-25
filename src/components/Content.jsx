@@ -8,12 +8,22 @@ class GiveawayPicker extends Component {
       participants: [],
       winner: null,
       newParticipant: '',
+      error: ''
     };
   }
 
   handleAddParticipant = (participant) => {
+    const { newParticipant, participants } = this.state;
+    if (newParticipant.trim() === '') {
+      this.setState({ error: 'Nama peserta tidak boleh kosong.' });
+      return; // Tidak menambahkan peserta jika input kosong
+    }
+
+    // Menambahkan peserta ke daftar
     this.setState((prevState) => ({
-      participants: [...prevState.participants, participant],
+      participants: [...prevState.participants, newParticipant],
+      newParticipant: '', // Mengosongkan input setelah menambahkan
+      error: '', // Menghilangkan pesan kesalahan jika ada
     }));
   };
 
